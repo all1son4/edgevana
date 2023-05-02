@@ -1,0 +1,203 @@
+.sideBar {
+  box-sizing: border-box;
+  padding: 21px 16px 32px;
+  background: #FFFFFF;
+  box-shadow: 0 0 38.4px rgba(0, 0, 0, 0.04);
+  display: grid;
+  grid-template-rows: auto auto 1fr;
+  height: 100vh;
+  width: 288px;
+  position: fixed;
+  left: 0;
+
+
+  .logo {
+    margin: 0 0 0 8px;
+  }
+
+  .menu {
+    margin: 72px 0 0 0;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    position: relative;
+    padding: 0;
+    list-style: none;
+
+    .menuItem {
+      box-sizing: border-box;
+      padding: 15px 14px 15px 17px;
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 17px;
+      color: rgba(21, 31, 78, 0.72);
+      display: flex;
+      gap: 24px;
+      align-items: center;
+      border-radius: 6px;
+      transition: all 0.3s ease;
+      background: transparent;
+      cursor: pointer;
+
+      &:hover {
+        background: rgba(131, 138, 169, 0.2);
+      }
+    }
+
+    .menuItemActive {
+      background: linear-gradient(267.08deg, #2B3E9B -4.96%, #1E328E 100%);
+      box-shadow: 0 0 16px rgba(17, 30, 70, 0.12);
+      color: #FFFFFF;
+      pointer-events: none;
+      transition: all 0.1s ease;
+
+      & > svg {
+        fill: #FFFFFF !important;
+        & > path {
+          fill: #FFFFFF !important;
+        }
+      }
+    }
+  }
+
+  .downBox {
+    display: flex;
+    width: 100%;
+    box-sizing: border-box;
+    flex-direction: column;
+    gap: 22px;
+    justify-content: flex-end;
+    overflow: hidden;
+
+
+    .aboutUser {
+      display: grid;
+      align-items: center;
+      grid-template-columns: 40px auto auto;
+
+      .userPhoto {
+        width: 40px;
+        height: 40px;
+        object-fit: cover;
+        overflow: hidden;
+        border-radius: 50%;
+
+        & > img {
+          width: 40px;
+          height: auto;
+        }
+      }
+
+      .userInfo {
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+        margin: 0 0 0 7px;
+
+        .userName {
+          font-weight: 600;
+          font-size: 14px;
+          line-height: 17px;
+          color: #151F4E;
+          margin: 0;
+        }
+
+        .userEmail {
+          font-weight: 400;
+          font-size: 12px;
+          line-height: 15px;
+          color: #4B516A;
+          margin: 0;
+        }
+      }
+
+      .logoutLogo {
+        display: flex;
+        justify-self: flex-end;
+        padding: 10px;
+        border-radius: 50%;
+        background: transparent;
+        cursor: pointer;
+        transition: all 0.3s ease;
+
+        &:hover {
+          background: rgba(131, 138, 169, 0.2);
+          transition: all 0.3s ease;
+        }
+      }
+    }
+
+    .themeSwitcher {
+      box-sizing: border-box;
+      width: 100%;
+      border: 1px solid #F3F4F9;
+      border-radius: 32px;
+      padding: 4px;
+      display: flex;
+      position: relative;
+
+      .variant {
+        display: flex;
+        gap: 7px;
+        box-sizing: border-box;
+        padding: 8px 0;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        transition: all 0.1s ease;
+        border-radius: 32px;
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 17px;
+        color: #4B516A;
+        background: transparent;
+        z-index: 5;
+
+        & > p {
+          margin: 0;
+        }
+
+        &:hover {
+          background: rgba(131, 138, 169, 0.05);
+          transition: all 0.1s ease;
+        }
+      }
+
+      .variantActiveLight {
+        color: #2B3E9B;
+        pointer-events: none;
+      }
+
+      .variantActiveDark {
+        color: #FFFFFF;
+        pointer-events: none;
+      }
+
+      &:after {
+        position: absolute;
+        content: '';
+        width: 124px;
+        height: 36px;
+        background: #F3F4F9;
+        border-radius: 32px;
+        z-index: 2;
+        top: calc(50% - 18px);
+        transform: translateX(0px);
+        transition: all 0.3s ease;
+      }
+    }
+
+    .anotherSwitcher:after {
+      transform: translateX(124px);
+      transition: all 0.3s ease;
+      background: #4B516A;
+    }
+  }
+}
+
+@media (max-width: 940px) {
+  .sideBar {
+    display: none;  
+  }
+}

@@ -1,0 +1,35 @@
+.button {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #2B3E9B;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  background-color: transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background-color: rgba(43, 62, 155, 0.1);
+    transition: all 0.3s ease;
+  }
+
+  .leftSide {
+    display: flex;
+    transform: rotate(180deg);
+  }
+
+  .rightSide {
+    display: flex;
+    transform: rotate(0deg);
+  }
+}
+
+.buttonDisabled {
+  pointer-events: none;
+  opacity: 0.52;
+  border: 1px solid #4B516A;
+  border-radius: 24px;
+}

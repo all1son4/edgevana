@@ -1,0 +1,35 @@
+.button {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #FFFFFF;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  padding: 17px 10px;
+  background: #2B3E9B;
+  backdrop-filter: blur(2px);
+  border-radius: 8px;
+  font-family: 'Inter', serif;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 17px;
+  width: 100%;
+
+  &:hover {
+    opacity: 0.9;
+    transition: all 0.3s ease;
+  }
+
+}
+
+.cancelType {
+  background: #DCDFEF;
+  color: #838AA9;
+
+  &:hover {
+    background: #FF3A46;
+    color: #FFFFFF;
+  }
+}

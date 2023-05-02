@@ -1,0 +1,16 @@
+{
+  "userInfo": {
+    "firstName": "Dmitry",
+    "lastName": "Strok",
+    "email": "dm.strok98@gmail.com",
+    "password": "year2023Q",
+    "accountType": "individual",
+    "username": "All1son"
+  },
+  "questionNumber": {
+    "number": 1
+  },
+  "questions": {
+    "answers": {}
+  }
+}

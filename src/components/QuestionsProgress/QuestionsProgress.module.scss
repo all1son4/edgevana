@@ -1,0 +1,16 @@
+.progressBox {
+  display: flex;
+  width: 100%;
+}
+
+.progressItem {
+  height: 3px;
+  background: #EDF1FF;
+  display: flex;
+  width: 100%;
+}
+
+.progressItemPassed {
+  background: #2B3E9B;
+  box-shadow: 0 4px 8px rgba(28, 53, 167, 0.2);
+}

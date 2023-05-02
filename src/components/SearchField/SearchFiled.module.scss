@@ -1,0 +1,46 @@
+.searchFieldWrapper {
+  position: relative;
+  width: 100%;
+
+  .input {
+    width: 100%;
+    border: 1.4px solid #B9BFD9;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 17px;
+    color: #838AA9;
+    box-sizing: border-box;
+    padding: 17px 18px 17px 43px;
+    caret-color: #151F4E;
+    outline: none;
+    transition: all 0.3s ease;
+    background-color: transparent;
+
+     &::-webkit-input-placeholder {
+       color: rgba(75, 81, 106, 0.56);
+       font-weight: 600;
+       font-size: 14px;
+       line-height: 17px;
+    }
+
+    &:focus {
+      transition: all 0.3s ease;
+      border: 1.4px solid #151F4E;
+      pointer-events: none;
+    }
+
+    &:hover {
+      transition: all 0.3s ease;
+      background-color: rgba(255, 255, 255, 0.6);
+      border: 1.4px solid rgba(131, 138, 169, 0.4);
+    }
+  }
+
+  .iconWrapper {
+    display: flex;
+    position: absolute;
+    left: 18px;
+    top: 17px;
+  }
+}

@@ -1,0 +1,234 @@
+.mainPage {
+  background-color: #FFF;
+  width: 100vw;
+  font-family: 'Inter', serif;
+  display: flex;
+
+  .leftSide {
+    box-sizing: border-box;
+    padding: 0 20px;
+    width: 50%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+
+    .logo {
+      margin: 21px 0 0 24px;
+    }
+
+    .posCenterBox {
+      .title {
+        font-weight: 700;
+        font-size: 26px;
+        line-height: 31px;
+        color: #151F4E;
+        margin: 0 0 11px 0;
+      }
+
+      .subtitle {
+        font-weight: 400;
+        font-size: 15px;
+        line-height: 18px;
+        color: #838AA9;
+        margin: 0;
+      }
+
+      .container {
+        margin: 40px 0 30px 0;
+
+        .cardContainer {
+          display: flex;
+          flex-direction: column;
+          gap: 20px;
+          margin: 0 0 40px 0;
+        }
+      }
+
+      .ask {
+        text-align: center;
+        margin: 0;
+        font-weight: 500;
+        font-size: 15px;
+        line-height: 18px;
+        color: #838AA9;
+
+        .askRedirect {
+          font-size: 14px;
+          line-height: 17px;
+          color: #2B3E9B;
+          margin: 0 0 0 5px;
+          cursor: pointer;
+        }
+      }
+    }
+
+    .info {
+      padding: 0 0 32px 0;
+      font-weight: 400;
+      font-size: 12px;
+      line-height: 15px;
+      color: #838AA9;
+    }
+  }
+
+  .rightSide {
+    background: linear-gradient(90deg, #F2F4FC 0%, #FFFFFF 100%);
+    width: 50%;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+
+    .backgroundBox {
+      position: relative;
+      height: 780px;
+      width: 100%;
+      display: flex;
+      justify-content: flex-end;
+
+      .backgroundOne {
+        position: relative;
+        right: 0;
+        z-index: 2;
+      }
+
+      .backgroundTwo {
+        position: absolute;
+        right: 500px;
+        bottom: -60px;
+        z-index: 4;
+      }
+    }
+
+    .additionalBlock {
+      display: flex;
+      box-sizing: border-box;
+      padding: 0 20px;
+      gap: 80px;
+      max-width: 713px;
+      margin: 30px 0 0 0;
+      align-items: center;
+
+      .additionalTypography {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+
+        .additionalTitle {
+          font-weight: 600;
+          font-size: 22px;
+          line-height: 27px;
+          color: #151F4E;
+          margin: 0;
+        }
+
+        .additionalSubtitle {
+          margin: 0;
+          font-weight: 400;
+          font-size: 14px;
+          line-height: 170%;
+          color: #4B516A;
+        }
+      }
+
+      .buttonsBox {
+        display: flex;
+        gap: 18px;
+      }
+    }
+  }
+}
+
+@media (max-width: 1600px) {
+  .mainPage {
+    .rightSide {
+      .backgroundBox {
+        height: fit-content;
+
+        .backgroundOne {
+          transform: scale(0.6);
+          right: -144px;
+        }
+
+        .backgroundTwo {
+          transform: scale(0.6);
+          right: 226px;
+          bottom: 0;
+        }
+      }
+
+      .additionalBlock {
+        margin: 0;
+      }
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .mainPage {
+    .rightSide {
+      .backgroundBox {
+
+        .backgroundOne {
+          transform: scale(0.4);
+          right: -214px;
+        }
+
+        .backgroundTwo {
+          transform: scale(0.4);
+          right: 96px;
+          bottom: 0;
+        }
+      }
+
+      .additionalBlock {
+        flex-direction: column;
+        gap: 6px;
+        margin: -100px 0 0 0;
+
+        .additionalTitle {
+          text-align: center;
+        }
+
+        .additionalSubtitle {
+          text-align: center;
+        }
+
+      .buttonsBox {
+        display: flex;
+        gap: 60px;
+      }
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .mainPage {
+    .leftSide {
+      padding: 15px;
+      height: 100vh;
+      overflow: scroll;
+      width: 100%;
+      align-items: center;
+      gap: 30px;
+
+      .logo {
+        margin: 0;
+      }
+
+      .info {
+        padding: 0;
+      }
+    }
+
+    .rightSide {
+      display: none;
+    }
+  }
+}

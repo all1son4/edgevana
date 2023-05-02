@@ -1,0 +1,371 @@
+.mainPage {
+  background-color: #F3F4F9;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0 0 0 288px;
+  font-family: 'Inter', serif;
+
+  .content {
+    box-sizing: border-box;
+    padding: 0 24px 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .navigation {
+      background: #FFFFFF;
+      width: 100%;
+      box-sizing: border-box;
+      margin: 0 0 70px 0;
+      padding: 0 25px;
+      box-shadow: 0 6px 20px rgba(21, 31, 78, 0.06);
+      border-radius: 8px;
+      list-style: none;
+      display: flex;
+      gap: 40px;
+
+      .navigationItem {
+        box-sizing: border-box;
+        padding: 21px 0 20px;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 17px;
+        color: #838AA9;
+        transition: all 0.3s ease;
+        cursor: pointer;
+        opacity: 1;
+
+        &:hover {
+          color: #2B3E9B;
+          opacity: 0.7;
+          transition: all 0.3s ease;
+        }
+
+
+        &:after {
+          position: absolute;
+          bottom: 0;
+          width: 100%;
+          content: '';
+          height: 1px;
+          background: #FFFFFF;
+          transition: all 0.3s ease;
+        }
+      }
+
+      .navigationItemActive {
+        pointer-events: none;
+        color: #2B3E9B;
+        transition: all 0.3s ease;
+
+        &:after {
+          transition: all 0.3s ease;
+          background: linear-gradient(90deg, #2B3E9B 0%, rgba(43, 62, 155, 0) 100%);
+        }
+      }
+    }
+
+    .guideBox {
+      box-sizing: border-box;
+      position: relative;
+      width: 680px;
+      padding: 35px 56px 56px;
+      background: #FFFFFF;
+      box-shadow: 0 8px 48px rgba(25, 16, 73, 0.08);
+      border-radius: 12px;
+
+      .guideTitle {
+        font-weight: 600;
+        font-size: 20px;
+        line-height: 24px;
+        color: #151F4E;
+        margin: 0;
+      }
+
+      .guideInfoText {
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 19px;
+        color: #4B516A;
+        opacity: 0.72;
+        margin: 18px 0 0 0;
+      }
+
+      .progressWrapper {
+        position: absolute;
+        right: 0;
+        top: 166px;
+        width: 100%;
+      }
+
+      .questionBox {
+        margin: 76px 0 0 0;
+        display: inline-flex;
+
+        .questionNumber {
+          width: 32px;
+          height: 32px;
+          box-sizing: border-box;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          border-radius: 50%;
+          margin: 0 20px 0 0;
+          background: linear-gradient(267.08deg, #2B3E9B -4.96%, #1E328E 100%), #FFFFFF;
+
+          & > p {
+            font-weight: 600;
+            font-size: 16px;
+            line-height: 20px;
+            letter-spacing: -0.01em;
+            color: #FFFFFF;
+            margin: 0;
+          }
+        }
+
+        .question {
+          max-width: 516px;
+          font-weight: 600;
+          font-size: 18px;
+          line-height: 157.5%;
+          color: #151F4E;
+          margin: 0;
+        }
+      }
+
+      .radioBlock {
+        display: flex;
+        flex-direction: column;
+        gap: 26px;
+        margin: 44px 0 46px;
+
+        .errorMessage {
+          margin: -16px 0 0 0;
+          font-weight: 500;
+          font-size: 11px;
+          line-height: 11px;
+          color: #FF3A46;
+          opacity: 1;
+        }
+      }
+
+      .buttonBox {
+        display: flex;
+        gap: 26px;
+      }
+    }
+  }
+}
+
+@media (max-width: 1060px) {
+  .mainPage {
+    .content {
+      .navigation {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        row-gap: 0;
+        column-gap: 40px;
+      }
+    }
+  }
+}
+
+@media (max-width: 1040px) {
+  .mainPage {
+    .content {
+      .guideBox {
+        width: 600px;
+
+        .questionBox {
+
+          .question {
+            max-width: 420px;
+            font-weight: 600;
+            font-size: 18px;
+            line-height: 157.5%;
+            color: #151F4E;
+            margin: 0;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 940px) {
+  .mainPage {
+    padding: 0;
+
+    .content {
+      .navigation {
+        display: flex;
+      }
+
+      .guideBox {
+        width: 680px;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .mainPage {
+    .content {
+      .navigation {
+        display: grid;
+        justify-items: center;
+      }
+
+      .guideBox {
+        width: 600px;
+
+        .questionBox {
+
+          .question {
+            max-width: 420px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 650px) {
+  .mainPage {
+    .content {
+      .guideBox {
+        width: 450px;
+        padding: 25px 36px 36px;
+
+        .guideTitle {
+          font-size: 18px;
+          line-height: 22px;
+        }
+
+        .guideInfoText {
+          font-size: 14px;
+          line-height: 16px;
+        }
+
+        .progressWrapper {
+          position: absolute;
+          right: 0;
+          top: 166px;
+          width: 100%;
+        }
+
+        .questionBox {
+          margin: 76px 0 0 0;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+
+          .questionNumber {
+            margin: 0;
+          }
+
+          .question {
+            max-width: 100%;
+            font-size: 16px;
+            line-height: 18px;
+            text-align: center;
+            margin: 16px 0 0 0;
+          }
+        }
+
+        .buttonBox {
+          display: flex;
+          flex-direction: column-reverse;
+          gap: 16px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .mainPage {
+    .content {
+      .navigation {
+        column-gap: 10px;
+      }
+    }
+  }
+}
+
+@media (max-width: 540px) {
+  .mainPage {
+    .content {
+      padding: 0 10px 10px;
+      .header {
+        flex-direction: column;
+        gap: 10px;
+        align-items: flex-start;
+
+        .searchField {
+          width: 100%;
+        }
+      }
+      .navigation {
+        display: flex;
+        gap: 40px;
+        max-width: 100%;
+        overflow: scroll;
+
+        .navigationItem {
+          white-space: nowrap;
+        }
+      }
+
+      .guideBox {
+        width: 300px;
+        padding: 20px;
+
+        .guideTitle {
+          font-size: 18px;
+          line-height: 22px;
+        }
+
+        .guideInfoText {
+          font-size: 14px;
+          line-height: 16px;
+        }
+
+        .progressWrapper {
+          position: absolute;
+          right: 0;
+          top: 166px;
+          width: 100%;
+        }
+
+        .questionBox {
+          margin: 76px 0 0 0;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+
+          .questionNumber {
+            margin: 0;
+          }
+
+          .question {
+            max-width: 100%;
+            font-size: 16px;
+            line-height: 18px;
+            text-align: center;
+            margin: 16px 0 0 0;
+          }
+        }
+
+        .buttonBox {
+          display: flex;
+          flex-direction: column-reverse;
+          gap: 16px;
+        }
+      }
+    }
+  }
+}
