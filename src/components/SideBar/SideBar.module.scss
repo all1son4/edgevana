@@ -6,13 +6,27 @@
   display: grid;
   grid-template-rows: auto auto 1fr;
   height: 100vh;
+  overflow: scroll;
   width: 288px;
   position: fixed;
+  z-index: 10;
   left: 0;
 
 
   .logo {
     margin: 0 0 0 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .buttonWrapper {
+      width: fit-content;
+      display: none;
+
+      & > button {
+        padding: 10px;
+      }
+    }
   }
 
   .menu {
@@ -67,7 +81,7 @@
     flex-direction: column;
     gap: 22px;
     justify-content: flex-end;
-    overflow: hidden;
+    margin: 10px 0 0 0;
 
 
     .aboutUser {
@@ -198,6 +212,20 @@
 
 @media (max-width: 940px) {
   .sideBar {
-    display: none;  
+    display: none;
+
+    .logo {
+      .buttonWrapper {
+        width: fit-content;
+        display: flex;
+
+        & > button {
+          padding: 10px;
+        }
+      }
+    }
+    .menu {
+      margin: 36px 0 0 0;
+    }
   }
 }

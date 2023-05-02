@@ -7,8 +7,6 @@ H
 src/icons/icons.types.ts,6/8/68cf3ba46128354079a19dcb8c9cdb928ec3248c
 B
 src/icons/index.ts,5/e/5e66fd215f5febeca81c551f2c7ff033b04e6e86
-P
- src/components/Button/button.tsx,4/e/4ee9e21dc4e2614a89a88f7f6e6324a10efb8899
 I
 src/styles/responsive.css,b/3/b35d75ab8efb31e923f0d0127e33b382ae9c32e8
 g

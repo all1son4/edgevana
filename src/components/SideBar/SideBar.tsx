@@ -6,6 +6,7 @@ import {menuList} from './SideBar.constants'
 import {getUserInfo} from "../../api/userInfo";
 import {ISideBarProps} from "./SideBar.types";
 import {useRouter} from "next/router";
+import Button from "../Button/button";
 
 interface IMenuItem {
   icon: ReactNode
@@ -13,7 +14,7 @@ interface IMenuItem {
   id: string
 }
 
-export const SideBar: FC<ISideBarProps> = ({activeItem, setActiveItem}) => {
+export const SideBar: FC<ISideBarProps> = ({activeItem, setActiveItem, menuVision, setMenuVision}) => {
   const [theme, setTheme] = useState<string>('light')
   const [userInfo, setUserInfo] = useState<object>({})
 
@@ -28,11 +29,16 @@ export const SideBar: FC<ISideBarProps> = ({activeItem, setActiveItem}) => {
     router.replace({
       query: { ...router.query, tab: id },
     });
+    setMenuVision(false)
   }
 
   const logoutHandler = ():void => {
     localStorage.removeItem('authParams')
     router.push('/signup/accountType')
+  }
+
+  const menuStyleSetting = {
+    display: 'grid'
   }
 
   useEffect(() => {
@@ -45,9 +51,18 @@ export const SideBar: FC<ISideBarProps> = ({activeItem, setActiveItem}) => {
   }, [])
 
   return (
-    <nav className={styles.sideBar}>
+    <nav
+      style={menuVision ? menuStyleSetting : {}}
+      className={styles.sideBar}
+    >
       <div className={styles.logo}>
         <LogoIcon />
+        <div className={styles.buttonWrapper}>
+          <Button
+            buttonText={'X'}
+            onClick={() => {setMenuVision(!menuVision)}}
+          />
+        </div>
       </div>
       <ul className={styles.menu}>
         {menuList.map((item: IMenuItem) => {

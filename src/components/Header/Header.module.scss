@@ -51,18 +51,28 @@
         margin: 0;
       }
     }
+
+    .buttonWrapper {
+      height: 50px;
+      display: none;
+    }
   }
 }
 
 @media (max-width: 940px) {
   .header {
-    padding: 24px 24px 26px 0;
+    padding: 24px 24px 26px 24px;
+    .infoBox {
+      .buttonWrapper {
+        order: -1;
+        display: block;
+      }
+    }
   }
 }
 
-@media (max-width: 540px) {
+@media (max-width: 600px) {
   .header {
-    padding: 10px 10px 26px 0;
     flex-direction: column;
     gap: 10px;
     align-items: flex-start;
@@ -70,5 +80,11 @@
     .searchField {
       width: 100%;
     }
+  }
+}
+
+@media (max-width: 540px) {
+  .header {
+    padding: 10px 10px 26px 10px;
   }
 }

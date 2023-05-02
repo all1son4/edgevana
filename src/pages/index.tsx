@@ -9,6 +9,7 @@ export default function Home() {
   const router = useRouter()
   const {tab} = router.query
   const [activeItem, setActiveItem] = useState<string>('entrepreneurToolkit')
+  const [menuVision, setMenuVision] = useState<boolean>(false)
 
   const PageRender = ():ReactNode => {
     switch (tab) {
@@ -19,15 +20,6 @@ export default function Home() {
     }
   }
 
-  useEffect(() => {
-    if (JSON.parse(localStorage.getItem('authParams') as string)?.isLogin) {
-      router.push('/')
-    } else {
-      router.push('/signup/accountType')
-    }
-  }, [])
-
-
   return (
     <>
       <Head>
@@ -36,8 +28,17 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <SideBar activeItem={activeItem} setActiveItem={setActiveItem}/>
-      <Header activeTab={activeItem}/>
+      <SideBar
+        activeItem={activeItem}
+        setActiveItem={setActiveItem}
+        menuVision={menuVision}
+        setMenuVision={setMenuVision}
+      />
+      <Header
+        activeTab={activeItem}
+        setMenuVision={setMenuVision}
+        menuVision={menuVision}
+      />
       {PageRender()}
     </>
   )
