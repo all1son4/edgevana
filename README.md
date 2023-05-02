@@ -7,6 +7,27 @@ Server automatically will start on 3001 port. Please run server only 3001 port!
 
 npm run server 
 
+Check root file backendimmitation.json and paste into a file that:
+
+```
+{
+     "userInfo": {
+       "firstName": "",
+       "lastName": "",
+       "email": "",
+       "password": "",
+       "accountType": "",
+       "username": ""
+     },
+     "questionNumber": {
+       "number": 1
+     },
+     "questions": {
+       "answers": {}
+     }
+   }
+```
+
 After that you can start the project
 
 npm run dev

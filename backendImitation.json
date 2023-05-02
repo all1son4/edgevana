@@ -1,24 +1,16 @@
 {
   "userInfo": {
-    "firstName": "Dmitry",
-    "lastName": "Strok",
-    "email": "dm.strok98@gmail.com",
-    "password": "sdvkbjhE312Ddfdsge!",
-    "accountType": "individual",
-    "username": "All1son"
+    "firstName": "",
+    "lastName": "",
+    "email": "",
+    "password": "",
+    "accountType": "",
+    "username": ""
   },
   "questionNumber": {
-    "number": 8
+    "number": 1
   },
   "questions": {
-    "answers": {
-      "questionNumber1": "Public Full Node Producer",
-      "questionNumber2": "Blockdaemon",
-      "questionNumber3": "Some variant",
-      "questionNumber4": "Some variant",
-      "questionNumber5": "Some variant",
-      "questionNumber6": "Some variant",
-      "questionNumber7": "Some variant"
-    }
+    "answers": {}
   }
 }
