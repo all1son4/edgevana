@@ -1,8 +1,8 @@
 import Head from 'next/head'
 import React, {useState} from "react";
-import AccountTypeCard from "../../../components/accountTypeCard/accountTypeCard";
+import AccountTypeCard from "../../../components/AccountTypeCard/AccountTypeCard";
 import {IndividualIcon, BusinessIcon, LogoIcon} from "../../../icons";
-import Button from "../../../components/Button/button";
+import Button from "../../../components/Button/Button";
 import styles from './index.module.scss'
 import RoundButton from "../../../components/RoundButton/RoundButton";
 import Image from 'next/image'

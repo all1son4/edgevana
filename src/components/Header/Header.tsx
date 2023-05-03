@@ -4,7 +4,7 @@ import SearchField from "../SearchField/SearchFiled";
 import React, {FC} from "react";
 import {useRouter} from "next/router";
 import {IHeaderProps, IMainItem, INavItem} from "./Header.types";
-import Button from "../Button/button";
+import Button from "../Button/Button";
 
 const Header: FC<IHeaderProps> = ({activeTab, setMenuVision, menuVision}) => {
   const router = useRouter()

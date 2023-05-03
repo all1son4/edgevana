@@ -1,4 +1,4 @@
-import AccountTypeCard from "./accountTypeCard";
+import AccountTypeCard from "./AccountTypeCard";
 
 export * from './accountTypeCard.types'
 

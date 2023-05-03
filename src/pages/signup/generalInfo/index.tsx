@@ -3,9 +3,9 @@ import React, {useEffect, useState} from "react";
 import {LogoIcon} from "../../../icons";
 import styles from './index.module.scss'
 import Image from 'next/image'
-import Input from "../../../components/Input/input";
+import Input from "../../../components/Input/Input";
 import Checkbox from "../../../components/Checkbox/checkbox";
-import Button from "../../../components/Button/button";
+import Button from "../../../components/Button/Button";
 import {getUserInfo, sendUserInfo} from "../../../api/userInfo";
 import {useForm} from "react-hook-form";
 import {useRouter} from "next/router";

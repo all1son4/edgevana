@@ -11,12 +11,7 @@ type QuestionNumberResponse = {
 export const getQuestionNumber = async () => {
   try {
     const {data, status} =  await axios.get<QuestionNumberResponse>(
-      `${SERVER_URL}/questionNumber`,
-      {
-        headers: {
-          Accept: 'application/json',
-        }
-      }
+      `${SERVER_URL}/questionNumber`
     )
     return {data, status}
   } catch (error) {
@@ -30,13 +25,7 @@ export const setQuestionNumber = async (number: number) => {
       `${SERVER_URL}/questionNumber`,
       {
         number: number
-      },
-      {
-        headers: {
-          'Content-Type': 'application/json',
-          Accept: 'application/json',
-        },
-      },
+      }
     )
     return {data, status}
   } catch (error) {
@@ -50,13 +39,7 @@ export const sendAnswer = async (data: object) => {
       `${SERVER_URL}/questions`,
       {
         answers: data
-      },
-      {
-        headers: {
-          'Content-Type': 'application/json',
-          Accept: 'application/json',
-        },
-      },
+      }
       )
   } catch (error) {
     console.log(error)
@@ -66,12 +49,7 @@ export const sendAnswer = async (data: object) => {
 export const getAnswers = async () => {
   try {
     return await axios.get<object>(
-      `${SERVER_URL}/questions`,
-      {
-      headers: {
-        Accept: 'application/json',
-      },
-    }
+      `${SERVER_URL}/questions`
     )
   } catch (error) {
     console.log(error)
