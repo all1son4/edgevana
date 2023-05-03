@@ -167,7 +167,7 @@ const Web3Page: FC<IWeb3PagerProps> = ({ activeTab, setActiveTab }) => {
                   onClick={cancelButtonHandler}
                   variant={'cancel'}
                 />
-                <Button buttonText={'Next'} onClick={null} type={'submit'} />
+                <Button buttonText={'Next'} type={'submit'} />
               </div>
             ) : (
               <Button buttonText={'Reset'} onClick={resetButtonHandler} />
