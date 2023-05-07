@@ -5,8 +5,6 @@ H
 src/icons/icons.types.ts,6/8/68cf3ba46128354079a19dcb8c9cdb928ec3248c
 g
 7src/components/accountTypeCard/accountTypeCard.types.ts,2/6/262b8ff6eb58728278838accd6c60e277cb465ec
-F
-src/pages/api/hello.ts,c/9/c9a23308a93c267d84e45423bbba4c89a6c9141b
 X
 (src/components/Button/button.module.scss,9/c/9c2dc9dde4e01096ef3c0428f423190d257c26fe
 J
@@ -35,8 +33,6 @@ G
 src/icons/TeamsIcon.tsx,7/c/7c61191493b4e6669bac3d5b67e7d26c67753377
 >
 next.config.js,8/1/811a6d5a2e04fadb44d8eec365f2fa8af5c4facf
-^
-.src/pages/signup/accountType/index.module.scss,c/a/ca41e6bd7fa20c3022b1143a6ccb858f1481505a
 ^
 .src/pages/signup/generalInfo/index.module.scss,8/8/88ea2cd859c50bdeec3ebae071807458e2872cbc
 F
@@ -67,3 +63,10 @@ j
 :src/components/AccountTypeCard/AccountTypeCard.module.scss,3/2/32503d8e36dfc86c8e06a2608cb43ac4673e62c7
 X
 (src/components/Header/Header.module.scss,d/9/d975eea1bc219fcea24fed9ce654b95c2e3476f3
+9
+	README.md,8/e/8ec9a00bfd09b3190ac6b22251dbb1aa95a0579d
+Z
+*src/components/SideBar/SideBar.module.scss,3/9/391870732d2c45632320fb8377171af203a74367
+:
+
+.gitignore,a/5/a5cc2925ca8258af241be7e5b0381edf30266302
