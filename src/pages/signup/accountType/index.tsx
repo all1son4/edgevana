@@ -18,7 +18,7 @@ export default function AccountType() {
     const response = await setAccountType(activeState);
 
     if (response?.data) {
-      await router.push('http://localhost:3000/signup/generalInfo');
+      await router.push('/signup/generalInfo');
     }
   };
 

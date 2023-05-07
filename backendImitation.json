@@ -1,16 +1,19 @@
 {
   "userInfo": {
-    "firstName": "",
-    "lastName": "",
-    "email": "",
-    "password": "",
-    "accountType": "",
-    "username": ""
+    "firstName": "dfg",
+    "lastName": "dfg",
+    "email": "dm.strok98@gmail.com",
+    "password": "hgfghjTRtyfg132!",
+    "accountType": "individual",
+    "username": "lhbvjkh"
   },
   "questionNumber": {
-    "number": 1
+    "number": 2
   },
   "questions": {
-    "answers": {}
+    "answers": {
+      "questionNumber1": "Web3 Developer",
+      "questionNumber2": "Amazon Managed Blockchain"
+    }
   }
 }

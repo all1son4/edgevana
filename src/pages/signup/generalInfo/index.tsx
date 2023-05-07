@@ -1,25 +1,26 @@
-import Head from 'next/head'
-import React, {useEffect, useState} from "react";
-import {LogoIcon} from "../../../icons";
-import styles from './index.module.scss'
-import Image from 'next/image'
-import Input from "../../../components/Input/Input";
-import Checkbox from "../../../components/Checkbox/checkbox";
-import Button from "../../../components/Button/Button";
-import {getUserInfo, sendUserInfo} from "../../../api/userInfo";
-import {useForm} from "react-hook-form";
-import {useRouter} from "next/router";
-import {IStrongGradate, IUserInfo} from "./index.types";
+import Head from 'next/head';
+import React, { useEffect, useState } from 'react';
+import { LogoIcon } from '../../../icons';
+import styles from './index.module.scss';
+import Image from 'next/image';
+import Input from '../../../components/Input/Input';
+import Checkbox from '../../../components/Checkbox/checkbox';
+import Button from '../../../components/Button/Button';
+import { getUserInfo, sendUserInfo } from '../../../api/userInfo';
+import { useForm } from 'react-hook-form';
+import { useRouter } from 'next/router';
+import { IStrongGradate, IUserInfo } from './index.types';
 
 export default function GeneralInfo() {
   const checkboxPlaceholder = (
     <p className={styles.checkboxPlaceholder}>
-      I certify that i am 18 years of age or older,
-      i agree to the to Edgevana`s <span className={styles.bold}>Terms of Use</span>, and i have read the <span className={styles.bold}>Privacy Policy</span>.
+      I certify that i am 18 years of age or older, i agree to the to Edgevana`s{' '}
+      <span className={styles.bold}>Terms of Use</span>, and i have read the{' '}
+      <span className={styles.bold}>Privacy Policy</span>.
     </p>
-  )
+  );
 
-  const router = useRouter()
+  const router = useRouter();
 
   const [userInfo, setUserInfo] = useState<IUserInfo>({
     firstName: '',
@@ -27,8 +28,8 @@ export default function GeneralInfo() {
     email: '',
     password: '',
     accountType: '',
-    username: ''
-  })
+    username: '',
+  });
 
   const {
     register,
@@ -36,64 +37,80 @@ export default function GeneralInfo() {
     formState: { errors, isValid },
     clearErrors,
     reset,
-  } = useForm({shouldFocusError: false});
+  } = useForm({ shouldFocusError: false });
 
-  const [checkboxState, setCheckboxState] = useState<boolean>(false)
+  const [checkboxState, setCheckboxState] = useState<boolean>(false);
   const [strongGradate, setStrongGradate] = useState<IStrongGradate>({
     easy: false,
     medium: false,
     hard: false,
-  })
+  });
 
-  const onChangeHandler = (event: React.ChangeEvent<HTMLSelectElement>):void => {
-    const {value, name}: {value: string, name: string} = event.target
-    setUserInfo(prevState => ({...prevState, [name]: value}))
+  const onChangeHandler = (
+    event: React.ChangeEvent<HTMLSelectElement>
+  ): void => {
+    const { value, name }: { value: string; name: string } = event.target;
+    setUserInfo((prevState) => ({ ...prevState, [name]: value }));
 
     if (name === 'password') {
-      setStrongGradate(prevState => ({...prevState, easy: /^(?=.*\d)[a-zA-Z\d]/gm.test(value) && value.length >= 8}))
-      setStrongGradate(prevState => ({...prevState, medium: /^(?=.*\d)[a-zA-Z\d]/gm.test(value) && value.length >= 12}))
-      setStrongGradate(prevState => ({...prevState, hard: /^(?=.*[!@#$&*])(?=.*\d)[a-zA-Z\d]/gm.test(value) && value.length >= 16}))
+      setStrongGradate((prevState) => ({
+        ...prevState,
+        easy: /^(?=.*\d)[a-zA-Z\d]/gm.test(value) && value.length >= 8,
+      }));
+      setStrongGradate((prevState) => ({
+        ...prevState,
+        medium: /^(?=.*\d)[a-zA-Z\d]/gm.test(value) && value.length >= 12,
+      }));
+      setStrongGradate((prevState) => ({
+        ...prevState,
+        hard:
+          /^(?=.*[!@#$&*])(?=.*\d)[a-zA-Z\d]/gm.test(value) &&
+          value.length >= 16,
+      }));
     }
-  }
+  };
 
-  const onFocus = (event: React.ChangeEvent<HTMLSelectElement>):void => {
-    const {name}: {name: string} = event.target
-    clearErrors(name)
-  }
+  const onFocus = (event: React.ChangeEvent<HTMLSelectElement>): void => {
+    const { name }: { name: string } = event.target;
+    clearErrors(name);
+  };
 
   const buttonHandler = async () => {
     if (isValid && checkboxState) {
-      const response = await sendUserInfo(userInfo)
+      const response = await sendUserInfo(userInfo);
 
       if (response?.status === 200) {
-        localStorage.setItem('authParams', JSON.stringify({isLogin: true}))
-        router.push('http://localhost:3000')
-        reset()
+        localStorage.setItem('authParams', JSON.stringify({ isLogin: true }));
+        router.push('/');
+        reset();
       }
     }
-  }
+  };
 
   useEffect(() => {
     (async () => {
-      const response = await getUserInfo()
+      const response = await getUserInfo();
       if (response?.data) {
-        setUserInfo(prevState => ({...prevState, accountType: response.data.accountType}))
+        setUserInfo((prevState) => ({
+          ...prevState,
+          accountType: response.data.accountType,
+        }));
       }
-    })()
-  }, [])
+    })();
+  }, []);
 
   return (
     <>
       <Head>
         <title>Edegvana</title>
-        <meta name="description" content="Generated by create next app" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/favicon.ico" />
+        <meta name='description' content='Generated by create next app' />
+        <meta name='viewport' content='width=device-width, initial-scale=1' />
+        <link rel='icon' href='/favicon.ico' />
       </Head>
       <main className={styles.mainPage}>
         <div className={styles.leftSide}>
           <div className={styles.logo}>
-            <LogoIcon/>
+            <LogoIcon />
           </div>
           <form className={styles.form} onSubmit={handleSubmit(buttonHandler)}>
             <h1 className={styles.title}>Sign Up</h1>
@@ -110,8 +127,9 @@ export default function GeneralInfo() {
                   register={register('firstName', {
                     required: 'Required field',
                     pattern: {
-                      value: /^[a-zA-Zа-яА-Я'][a-zA-Zа-яА-Я-' ]+[a-zA-Zа-яА-Я']?$/,
-                      message: "Only more than 2 letters or hyphen"
+                      value:
+                        /^[a-zA-Zа-яА-Я'][a-zA-Zа-яА-Я-' ]+[a-zA-Zа-яА-Я']?$/,
+                      message: 'Only more than 2 letters or hyphen',
                     },
                   })}
                 />
@@ -125,8 +143,9 @@ export default function GeneralInfo() {
                   register={register('lastName', {
                     required: 'Required field',
                     pattern: {
-                      value: /^[a-zA-Zа-яА-Я'][a-zA-Zа-яА-Я-' ]+[a-zA-Zа-яА-Я']?$/,
-                      message: "Only more than 2 letters or hyphen"
+                      value:
+                        /^[a-zA-Zа-яА-Я'][a-zA-Zа-яА-Я-' ]+[a-zA-Zа-яА-Я']?$/,
+                      message: 'Only more than 2 letters or hyphen',
                     },
                   })}
                 />
@@ -142,7 +161,7 @@ export default function GeneralInfo() {
                   required: 'Required field',
                   pattern: {
                     value: /^[a-zA-Z0-9_.]{2,30}$/,
-                    message: "Invalid symbols or too short"
+                    message: 'Invalid symbols or too short',
                   },
                 })}
               />
@@ -157,8 +176,9 @@ export default function GeneralInfo() {
                 register={register('email', {
                   required: 'Required field',
                   pattern: {
-                    value: /^([a-z0-9_-]+\.)*[a-z0-9_-]+@[a-z0-9_-]+(\.[a-z0-9_-]+)*\.[a-z]{2,6}$/,
-                    message: "Enter correct email"
+                    value:
+                      /^([a-z0-9_-]+\.)*[a-z0-9_-]+@[a-z0-9_-]+(\.[a-z0-9_-]+)*\.[a-z]{2,6}$/,
+                    message: 'Enter correct email',
                   },
                 })}
               />
@@ -178,7 +198,8 @@ export default function GeneralInfo() {
                     value: strongGradate.hard
                       ? /^(?=.*[A-Z])(?=.*[!@#$&*])(?=.*\d)(?=.*[a-z]).{8,}$/
                       : /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/,
-                    message: "Password min 8 with upper & lower case letter and number"
+                    message:
+                      'Password min 8 with upper & lower case letter and number',
                   },
                 })}
               />
@@ -188,30 +209,52 @@ export default function GeneralInfo() {
               register={register('checkbox', {
                 required: {
                   value: true,
-                  message: 'Please confirm your age and rules'
-                }
+                  message: 'Please confirm your age and rules',
+                },
               })}
               errorMessage={errors?.checkbox?.message}
               onChange={() => {
-                setCheckboxState(prevState => !prevState)
-                clearErrors('checkbox')
+                setCheckboxState((prevState) => !prevState);
+                clearErrors('checkbox');
               }}
-              placeholder={checkboxPlaceholder} />
+              placeholder={checkboxPlaceholder}
+            />
             <div className={styles.buttonBox}>
-              <Button buttonText={'Sign Up'} onClick={buttonHandler} type={'submit'}/>
+              <Button
+                buttonText={'Sign Up'}
+                onClick={buttonHandler}
+                type={'submit'}
+              />
             </div>
-            <p className={styles.ask}><span className={styles.askRedirect}>Sign up</span> for <span>{userInfo?.accountType === 'individual'
-              ? 'business'
-              : 'individual'}</span> account</p>
+            <p className={styles.ask}>
+              <span className={styles.askRedirect}>Sign up</span> for{' '}
+              <span>
+                {userInfo?.accountType === 'individual'
+                  ? 'business'
+                  : 'individual'}
+              </span>{' '}
+              account
+            </p>
           </form>
           <span className={styles.info}>© Edegvana 2022</span>
         </div>
         <div className={styles.rightSide}>
-          <p className={styles.additionalTitle}>Earn free crypto after making your first purchase.</p>
-          <p className={styles.additionalSubtitle}>*The average Edgevana operator earns $950 a month in incentives. <span>See terms</span></p>
-          <Image src={'/Dashboard.png'} alt={'picture'} width={804} height={543} className={styles.picture} />
+          <p className={styles.additionalTitle}>
+            Earn free crypto after making your first purchase.
+          </p>
+          <p className={styles.additionalSubtitle}>
+            *The average Edgevana operator earns $950 a month in incentives.{' '}
+            <span>See terms</span>
+          </p>
+          <Image
+            src={'/Dashboard.png'}
+            alt={'picture'}
+            width={804}
+            height={543}
+            className={styles.picture}
+          />
         </div>
       </main>
     </>
-  )
+  );
 }
